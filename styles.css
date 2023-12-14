@@ -1,0 +1,199 @@
+body {
+	/* The Body section of the CSS contains the default settings for the whole webpage */
+	color: #333333;
+	/* Re Styleguide General : The default font color is #333333 (Dark Charcoal) */
+	font-family: Times, "Times New Roman", Georgia, serif;
+	/* Re Styleguide General : The default font family is Times, "Times New Roman", Georgia, serif */
+	font-size: 14px;
+	/* Re Styleguide General : The default font size is 14px */
+	margin: 0;
+	padding: 0;
+	width: 1024px;
+	/* Re Styleguide General : The width of the page is 1024px */
+
+}
+
+/* Re Styleguide Header (note: the Header is also known as the Navigation Menu) */
+/* Re Styleguide Header : The header background covers the full width of the design ... hence no indenting of the header background. */
+.navigation ul {
+	background-color: #333333;
+	/* Re-Styleguide Header : The header area uses a background colour of #333333 (Dark Charcoal) */
+	border-bottom: 3px solid transparent;
+	/* If you hover or focus on the Header bar link, then the previous Header bar link is also highlighted at the same time. Stop this happening */
+	color: #fefefe;
+	/* Re-Styleguide Header : The header area uses a font colour of #fefefe (very light grey) */
+	font-size: 120%;
+	/* Re-Styleguide Header : The header links use a font size of 120% ie. default 14px x 120% = 16.8px */
+	height: 45px;
+	/* Allow the width of the Navigation bar to be a finger height of 45px */
+	list-style: none;
+	padding-left: 5px;
+	/* Put 5px padding so the Nav bar text is moved closer to the left within the Nav Bar */
+	padding-right: 0;
+	/* Remove the padding on the right side of the Nav bar so the Nav bar doesnt overflow the max screen size of 1024px (padding is on 3 sides of the Nav bar) */
+}
+
+/* Style the list items (li) within the unordered list */
+.navigation li {
+	display: inline;
+	/* Make the Navigation links display horizontally */
+}
+
+.navigation a {
+	border-bottom: 3px solid transparent;
+	/* If you hover or focus on the Header bar link, then the previous Header bar link is also highlighted at the same time. Stop this happening */
+	color: #fefefe;
+	/* Re-Styleguide Header : The header area uses a font colour of #fefefe (very light grey) */
+	font-size: 120%;
+	/* Re-Styleguide Header : The header links use a font size of 120% ie. default 14px x 120% = 16.8px */
+	line-height: 2;
+	/* Horizontally adjust the text within the Navigation bar as too close to the top of the Navigation bar */
+	margin: 0 10px;
+	padding: 0;
+	text-decoration: none;
+	/* Get rid of the default white underline under every Navigation link */
+}
+
+.navigation a:hover,
+.navigation a:focus {
+	border-bottom-color: #ff0000;
+	/* Re Styleguide Header : Hovering the mouse over a header link or placing the keyboard focus on a header link shows that link with a bottom border that has a width of 3px, a style of solid, a colour of #ff0000 */
+	outline: none;
+	text-decoration: none;
+}
+
+.navigation .current {
+	border-bottom: 3px solid #ff0000;
+	/* Re Styleguide Header : The header current header link has a bottom border that has a width of 3px, a style of solid, a colour of #ff0000 */
+}
+
+/* h1 header is the words "Museum of Odds & Ends" */
+h1 {
+	font-size: 28px;
+	/* Set a larger font size for the title text than the default 14px */
+	margin: 0;
+	/* Re-Styleguide Main Area : There is no margin or padding between the title and location text */
+	margin-left: 10px;
+	/* Reinstate only the left margin - to leave a gap between the left side of the webpage */
+	padding: 0;
+	/* Re-Styleguide Main Area : There is no margin or padding between the title and location text */
+}
+
+/* h2 header is the words "Walton Hall, Milton Keynes" */
+h2 {
+	font-size: 18px;
+	/* Set a larger font size for the location text than the default 14px */
+	margin: 0;
+	/* Re-Styleguide Main Area : There is no margin or padding between the title and location text */
+	margin-left: 10px;
+	/* Re-instate only the left margin - to leave a gap between the left side of the webpage */
+	padding: 0;
+	/* Re-Styleguide Main Area : There is no margin or padding between the title and location text */
+}
+
+/* h3 header is the word "News" */
+h3 {
+	font-size: 26px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+/* This grid 'container' holds all the 6 images and their corresponding image text in a grid of 2 rows x 3 columns" */
+.grid-image-container {
+	display: grid;
+	/* Command to set up a Grid */
+	grid-gap: 15px;
+	/* Leave a 15px gap around the image and its corresponding text */
+	grid-template-columns: 1fr 1fr 1fr;
+	/* Define the grid to have 3 columns of images and corresponding image text */
+	grid-template-rows: 1fr 1fr;
+	/* Define the grid to have 2 rows of images and corresponding image text */
+	max-width: 100%;
+	/* Adjust the max-width to make the grid wider */
+}
+
+.image-container {
+	margin: 10px;
+	margin-bottom: 30px;
+	max-width: 100%;
+	/* You can adjust this value as needed to control the image container's width */
+	padding: 0;
+}
+
+/* Style for each image box within the grid of 6 images */
+.image {
+	height: 100%;
+	margin: 0;
+	max-width: 100%;
+	/* Set a specific width for the images */
+	padding: 0;
+	width: auto;
+}
+
+.main-area {
+	align-items: flex-start;
+	display: flex;
+	overflow: hidden
+}
+
+*:focus {
+	outline: 0;
+	/* blue accessibility box/border displaying round the base of the image when key tabbing the images - the only way to delete this was to use this command */
+}
+
+.image-container .image-title {
+	font-weight: bold;
+	/* Makes sure the image text is always displayed as bold text */
+}
+
+.image-container:focus-within .image-title {
+	text-decoration: underline;
+	/* Underline the text under the image that the 'tab key' is sitting on - the 'focus' command doesnt work as 'focus' can only be used on the 'anchor' html command ...
+                                 You have to go to the parent of the image plus its corresponding image text (.image-container) and search 'focus-within' this parent - 
+								 if the 'anchor' has a key tab placed on it then the command 'focus-within' will work to let you underline the image text below the image */
+}
+
+.image-container:hover .image-title {
+	text-decoration: underline;
+	/* Underline the images text if the image is hovered over */
+}
+
+.news-entry-title {
+	font-size: 20px;
+	/* Adjust the font size for the News Title as needed */
+	font-weight: bold;
+	/* Make the news entry title bold text */
+	margin: 0;
+	/* Re-Styleguide News : There must be no margin or padding between the title and date text */
+	margin-top: 15px;
+	/* Re-Styleguide News : There must be at least 15px space between news items */
+	padding: 0;
+	/* Re-Styleguide News : There must be no margin or padding between the title and date text */
+}
+
+.news-entry-date {
+	font-weight: bold;
+	/* Make the news entry date bold text */
+	margin: 0;
+	/* Re-Styleguide News : There must be no margin or padding between the title and date text */
+	padding: 0;
+	/* Re-Styleguide News : There must be no margin or padding between the title and date text */
+}
+
+.news-entry-text {
+	font-size: 16px;
+	/* The default size of font is 14px. Increased this to 16px for 'accessibility' reasons */
+}
+
+.news-sidebar {
+	/* All the news elements are contained in a html container called an aside container */
+	float: right;
+	/* Make sure the news container always pushes to the right hand side of the webpage - this isnt required but useful to make sure a gap between images and news containers */
+	margin-left: 25px;
+	/* Add a margin to the left of the news container (space outside the left side of the news container) to separate the news container from touching the right side of the images grid  */
+	margin-right: 25px;
+	/* Add a margin so that the news does not sit directly against the edge of the screen on the far right side of webpage */
+	max-width: calc(100% - 800px);
+	/* Adjust the px (pixels) value of the image grid to create space for the column containing the news (aside column). */
+}
+
